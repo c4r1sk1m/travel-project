@@ -1,0 +1,70 @@
+{
+	"Request Headers (5.078 kB)": {
+		"headers": [
+			{
+				"name": "Accept",
+				"value": "application/json, text/plain, */*"
+			},
+			{
+				"name": "Accept-Encoding",
+				"value": "gzip, deflate, br"
+			},
+			{
+				"name": "Accept-Language",
+				"value": "en-US,en;q=0.5"
+			},
+			{
+				"name": "Api-Key",
+				"value": "null"
+			},
+			{
+				"name": "Api-Version",
+				"value": "2021-10-26"
+			},
+			{
+				"name": "Connection",
+				"value": "keep-alive"
+			},
+			{
+				"name": "Cookie",
+				"value": "lng=en-US; split_v2=split52; sbjs_migrations=1418474375998%3D1; sbjs_current_add=fd%3D2022-12-22%2015%3A38%3A31%7C%7C%7Cep%3Dhttps%3A%2F%2Fwww.trustedhousesitters.com%2Fhouse-and-pet-sitting-assignments%2F%3Fq%3DeyJmaWx0ZXJzIjp7ImFjdGl2ZU1lbWJlcnNoaXAiOnRydWUsImFzc2lnbm1lbnRzIjp7InJldmlld2luZyI6ZmFsc2UsImNvbmZpcm1lZCI6ZmFsc2V9LCJnZW9IaWVyYXJjaHkiOnsiY291bnRyeVNsdWciOiJ1bml0ZWQtc3RhdGVzIiwiYWRtaW4xU2x1ZyI6ImNvbG9yYWRvIn19LCJmYWNldHMiOltdLCJzb3J0IjpbeyJwdWJsaXNoZWQiOiJkZXNjIn1dLCJwYWdlIjoxLCJyZXN1bHRzUGVyUGFnZSI6MTIsImRlYnVnIjpmYWxzZX0%3D%7C%7C%7Crf%3D%28none%29; sbjs_first_add=fd%3D2022-12-22%2015%3A38%3A31%7C%7C%7Cep%3Dhttps%3A%2F%2Fwww.trustedhousesitters.com%2Fhouse-and-pet-sitting-assignments%2F%3Fq%3DeyJmaWx0ZXJzIjp7ImFjdGl2ZU1lbWJlcnNoaXAiOnRydWUsImFzc2lnbm1lbnRzIjp7InJldmlld2luZyI6ZmFsc2UsImNvbmZpcm1lZCI6ZmFsc2V9LCJnZW9IaWVyYXJjaHkiOnsiY291bnRyeVNsdWciOiJ1bml0ZWQtc3RhdGVzIiwiYWRtaW4xU2x1ZyI6ImNvbG9yYWRvIn19LCJmYWNldHMiOltdLCJzb3J0IjpbeyJwdWJsaXNoZWQiOiJkZXNjIn1dLCJwYWdlIjoxLCJyZXN1bHRzUGVyUGFnZSI6MTIsImRlYnVnIjpmYWxzZX0%3D%7C%7C%7Crf%3D%28none%29; sbjs_current=typ%3Dtypein%7C%7C%7Csrc%3D%28direct%29%7C%7C%7Cmdm%3D%28none%29%7C%7C%7Ccmp%3D%28none%29%7C%7C%7Ccnt%3D%28none%29%7C%7C%7Ctrm%3D%28none%29; sbjs_first=typ%3Dtypein%7C%7C%7Csrc%3D%28direct%29%7C%7C%7Cmdm%3D%28none%29%7C%7C%7Ccmp%3D%28none%29%7C%7C%7Ccnt%3D%28none%29%7C%7C%7Ctrm%3D%28none%29; sbjs_udata=vst%3D1%7C%7C%7Cuip%3D%28none%29%7C%7C%7Cuag%3DMozilla%2F5.0%20%28Windows%20NT%2010.0%3B%20Win64%3B%20x64%3B%20rv%3A109.0%29%20Gecko%2F20100101%20Firefox%2F109.0; sbjs_session=pgs%3D6%7C%7C%7Ccpg%3Dhttps%3A%2F%2Fwww.trustedhousesitters.com%2Fhouse-and-pet-sitting-assignments%2F%3Fq%3DeyJmaWx0ZXJzIjp7ImFjdGl2ZU1lbWJlcnNoaXAiOnRydWUsImFzc2lnbm1lbnRzIjp7InJldmlld2luZyI6ZmFsc2UsImNvbmZpcm1lZCI6ZmFsc2V9LCJnZW9IaWVyYXJjaHkiOnsiY291bnRyeVNsdWciOiJ1bml0ZWQtc3RhdGVzIiwiYWRtaW4xU2x1ZyI6ImNvbG9yYWRvIn19LCJmYWNldHMiOltdLCJzb3J0IjpbeyJwdWJsaXNoZWQiOiJkZXNjIn1dLCJwYWdlIjoxLCJyZXN1bHRzUGVyUGFnZSI6MTIsImRlYnVnIjpmYWxzZX0%3D; persid=RTGyNCS9MWGt7ILxRVln; revoffers_affil=page_num%3D3%26vid%3DaCEOr_1CES4notxt%26sid%3DaCEOs_1CES4njot0%26f%3D66c9f96da425472064a6ae45d889778c; _rdt_uuid=1671741511583.023fe3d5-5487-4a98-af9c-1851f333b059; _tt_enable_cookie=1; _ttp=rzkFYHZwt8F2DZNK5CG3IrlORb-; ajs_anonymous_id=5968bf73-56aa-4dfa-9578-26fd97ba0444; _gcl_au=1.1.313862067.1671741512; _ga_MP57F26VZZ=GS1.1.1671741512.1.1.1671741525.47.0.0; _ga=GA1.2.613067578.1671741512; ga4_ga_MP57F26VZZ=GS1.1.1671741512.1.1.1671741601.60.0.0; ga4_ga=GA1.1.5968bf73-56aa-4dfa-9578-26fd97ba0444; amplitude_idundefinedtrustedhousesitters.com=eyJvcHRPdXQiOmZhbHNlLCJzZXNzaW9uSWQiOm51bGwsImxhc3RFdmVudFRpbWUiOm51bGwsImV2ZW50SWQiOjAsImlkZW50aWZ5SWQiOjAsInNlcXVlbmNlTnVtYmVyIjowfQ==; amplitude_id_5b395a97eeb99b5264af18e1ad06020etrustedhousesitters.com=eyJkZXZpY2VJZCI6IjllYzkxMWUzLWZmNzgtNDM5Ny04YzhlLTNkNjVkNTdjZWUwNlIiLCJ1c2VySWQiOm51bGwsIm9wdE91dCI6ZmFsc2UsInNlc3Npb25JZCI6MTY3MTc0MTUxMjIzMywibGFzdEV2ZW50VGltZSI6MTY3MTc0MTYwMTMyMSwiZXZlbnRJZCI6OCwiaWRlbnRpZnlJZCI6NSwic2VxdWVuY2VOdW1iZXIiOjEzfQ==; _gid=GA1.2.1624380091.1671741512; _hjSessionUser_1238275=eyJpZCI6Ijc1NzI1ZjY4LTIyYzItNTU4Ni1iOGQ3LTIwM2YyZTg3NGYzMyIsImNyZWF0ZWQiOjE2NzE3NDE1MTIzNzAsImV4aXN0aW5nIjp0cnVlfQ==; _hjFirstSeen=1; _hjIncludedInSessionSample=0; _hjSession_1238275=eyJpZCI6IjdmZTM1YTAyLTRhOTEtNGRkNS04YWMzLTZkODI3YjJmMjkxMCIsImNyZWF0ZWQiOjE2NzE3NDE1MTI1OTgsImluU2FtcGxlIjpmYWxzZX0=; _hjAbsoluteSessionInProgress=0; _fbp=fb.1.1671741512673.2064764353; cjConsent=MHxOfDB8Tnww; __stripe_mid=b4ef82c2-8800-4ecd-8ce4-d5f9612faaf3a62f70; __stripe_sid=dec886ea-96df-41be-af47-00cbe4e1dce8e0b6df; cjUser=0a3daa89-3a0f-4c3c-aad6-4b21049337b7; _thus={\"cookiePolicyAccepted\":true}; _gat=1; _uetsid=99769a20823811edb1770706222869de; _uetvid=99767670823811eda3e8c597b0e1553f"
+			},
+			{
+				"name": "Host",
+				"value": "www.trustedhousesitters.com"
+			},
+			{
+				"name": "Referer",
+				"value": "https://www.trustedhousesitters.com/house-and-pet-sitting-assignments/?q=eyJmaWx0ZXJzIjp7ImFjdGl2ZU1lbWJlcnNoaXAiOnRydWUsImFzc2lnbm1lbnRzIjp7InJldmlld2luZyI6ZmFsc2UsImNvbmZpcm1lZCI6ZmFsc2V9LCJnZW9IaWVyYXJjaHkiOnsiY291bnRyeVNsdWciOiJ1bml0ZWQtc3RhdGVzIiwiYWRtaW4xU2x1ZyI6ImNvbG9yYWRvIn19LCJmYWNldHMiOltdLCJzb3J0IjpbeyJwdWJsaXNoZWQiOiJkZXNjIn1dLCJwYWdlIjoxLCJyZXN1bHRzUGVyUGFnZSI6MTIsImRlYnVnIjpmYWxzZX0="
+			},
+			{
+				"name": "Sec-Fetch-Dest",
+				"value": "empty"
+			},
+			{
+				"name": "Sec-Fetch-Mode",
+				"value": "cors"
+			},
+			{
+				"name": "Sec-Fetch-Site",
+				"value": "same-origin"
+			},
+			{
+				"name": "sentry-trace",
+				"value": "66408b6f2843434aaeb9af29193d5db8-ad6ba9327283b241-0"
+			},
+			{
+				"name": "TE",
+				"value": "trailers"
+			},
+			{
+				"name": "Timezone-Offset",
+				"value": "-5"
+			},
+			{
+				"name": "User-Agent",
+				"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/109.0"
+			}
+		]
+	}
+}
