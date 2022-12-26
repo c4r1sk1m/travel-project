@@ -12,12 +12,14 @@ class TrustedHouseSitter:
             self.headers = json.load(file)
         
 
-    def search_listings(self,location="",resultsPerPage=100,page=1):
+    ## Returns a python dict of listings
+    def search_listings(self,location="colorado",resultsPerPage=100,page=1):
         
         with open("search_query.json","r") as file:
             queryParamters = json.load(file)
-            queryParamters["page"]           = page
-            queryParamters["resultsPerPage"] = resultsPerPage
+            queryParamters["page"]                                      = page
+            queryParamters["filters"]["geoHierarchy"]["admin1Slug"]     = location
+            queryParamters["resultsPerPage"]                            = resultsPerPage
 
         endPoint = self.url +"/search/listings/?query="+urllib.parse.quote(json.dumps(queryParamters))       
         response = requests.get(url=endPoint,headers=self.headers)
