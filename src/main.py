@@ -7,6 +7,11 @@ import brotli
 import json
 
 from util import load_headers, get_webpage, extract_listing_data, extract_next_page_url
+from TrustedHouseSitters import TrustedHouseSitter
+
+def test():
+    ths = TrustedHouseSitter(headersFile="query_headers.json")
+    print(ths.search_listings())
 
 def main():
     baseUrl = "https://www.trustedhousesitters.com"
@@ -38,4 +43,5 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    # main()
+    test()

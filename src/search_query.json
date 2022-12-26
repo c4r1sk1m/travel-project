@@ -1,0 +1,26 @@
+{
+   "filters":{
+      "activeMembership":true,
+      "assignments":{
+         "confirmed":false
+      },
+      "geoHierarchy":{
+         "countrySlug":"united-states",
+         "admin1Slug":"colorado"
+      }
+   },
+   "facets":[
+      
+   ],
+   "sort":[
+      {
+         "function":{
+            "name":"POPULAR_NEW_SITS_WITH_PAUSED",
+            "order":"asc"
+         }
+      }
+   ],
+   "page":1,
+   "resultsPerPage":100,
+   "debug":false
+}
