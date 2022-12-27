@@ -11,7 +11,34 @@ from TrustedHouseSitters import TrustedHouseSitter
 
 def test():
     ths = TrustedHouseSitter(headersFile="query_headers.json")
-    print(ths.search_listings())
+
+    allListings = ths.search_listings()
+    tempList = []
+    for listing in allListings:
+        tempList = tempList + listing
+    
+    validListings = []
+    for listing in tempList:
+        if listing["assignments"] != []:
+            validListings.append(listing)
+
+    print(len(validListings))
+
+    # print(tempList)
+    print(len(tempList))
+    # tempList = list(set(tempList))
+
+
+    unique = { each['id'] : each for each in tempList }.values()
+    print(len(unique))
+    # print(len(tempList))
+    tempMap = {}
+    for listing in tempList:
+        tempMap[listing["id"]] = listing["id"]
+    print(len(tempMap.keys()))
+        # print(hash(str(listing)))
+    # print(allListings[9])
+
 
 def main():
     baseUrl = "https://www.trustedhousesitters.com"
