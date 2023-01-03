@@ -28,6 +28,7 @@ def test():
     print(len(tempList))
     # tempList = list(set(tempList))
 
+    print(validListings)
 
     unique = { each['id'] : each for each in tempList }.values()
     print(len(unique))
