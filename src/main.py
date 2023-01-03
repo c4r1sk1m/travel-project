@@ -28,7 +28,66 @@ def test():
     print(len(tempList))
     # tempList = list(set(tempList))
 
-    print(validListings)
+
+    ### Convert Json output to dataframe export ### 
+
+    print('######### PRINTING VALID LISTINGS ###########')
+
+    res_df = pd.DataFrame()
+
+    for v in validListings:
+
+        listingId = v['id']
+        listingLocation1a = v['location']['name']
+        listingLocation1b = v['location']['admin1Name']
+        listingLocation1c = v['location']['countryName']
+        listingLocation1d = v['location']['continentName']
+        listingLocationLat= v['location']['coordinates']['lat']
+        listingLocationLon= v['location']['coordinates']['lon']
+        
+        listingUserId = v['user']['id']
+        listingUserFirstName = v['user']['firstName']
+        listingPetCount = [i['name'] + ' (' + str(i['count']) + ')' for i in v['animals']]
+        listingTotalPetCount = sum([i['count'] for i in v['animals']])
+        
+        listingAssignmentsCount = len(v['assignments'])
+
+        for assign in v['assignments']:
+            listingAssignmentStart = assign['startDate']
+            listingAssignmentEnd = assign['endDate']
+            listingAssignmentNumApplicant = assign['numberOfApplicants']
+            listingAssignmentReview = assign['isReviewing']
+            listingAssignmentConfirmed = assign['isConfirmed']
+            
+            row_df = {'Listing ID': listingId,
+                    'Listing Location 1a': listingLocation1a,
+                    'Listing Location 1b': listingLocation1b,
+                    'Listing Location 1c': listingLocation1c,
+                    'Listing Location 1d': listingLocation1d,
+                    'Latitude': listingLocationLat,
+                    'Longitude': listingLocationLon,
+                    'User ID': listingUserId,
+                    'First Name': listingUserFirstName,
+                    'Pets': listingPetCount,
+                    'Number of Pets': listingTotalPetCount,
+                    'Start Date': listingAssignmentStart,
+                    'End Date': listingAssignmentEnd,
+                    'Number of Applicants': listingAssignmentNumApplicant,
+                    'Assignment in Review': listingAssignmentReview,
+                    'Assignment is Confirmed': listingAssignmentConfirmed}
+
+            res_df = res_df.append(row_df, ignore_index = True)     
+
+
+    res_df['Start Date'] = pd.to_datetime(res_df['Start Date'])
+    res_df['End Date'] = pd.to_datetime(res_df['End Date'])
+    res_df['Duration (Days)'] = res_df['End Date'] - res_df['Start Date']
+    
+
+    print(res_df)
+
+
+
 
     unique = { each['id'] : each for each in tempList }.values()
     print(len(unique))
