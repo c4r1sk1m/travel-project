@@ -53,51 +53,29 @@ def top_n_nearest_airports(listing_lat,listing_lon, continent, n):
     # Filter down to same continent
     airports  = airports[airports['continent']==continent]
 
+    # Filter down to valid airports
+    airports = airports[airports['type'].str.contains('airport')]
+
+    # Filter down to airports with scheduled services
+    airports = airports[airports['scheduled_service']=='yes']
+
     # Calculate distance between listing lat lon and airports
-
-
 
     for index, row in airports.iterrows():
 
         airports.loc[index,'dist'] = haversine(listing_lat, listing_lon, row['latitude_deg'], row['longitude_deg'])
 
+    
+    airports_returned = airports.sort_values(by = ['dist'])[['name', 'continent','latitude_deg', 'longitude_deg', 'local_code','iata_code','dist']].iloc[:n,:]
+   
+    return airports_returned
 
-    # coords_1 = (listing_lat, listing_lon)
-    # coords_2 = (52.406374, 16.9251681)
 
-    # print(geopy.distance.geodesic(coords_1, [()]).km
-    # print( (airports['longitude_deg'] - listing_lon)**2)
-    # airports['dist_temp'] = (airports['longitude_deg'] - listing_lon)**2 + (airports['latitude_deg'] - listing_lat)**2
-    # airports['dist'] = airports['dist_temp'].apply(lambda x: math.sqrt(x))
-
-    #airports = airports.drop(columns = ['dist_temp'])
-    #print(airports['dist'].describe())
-
-    print(airports.sort_values(by = ['dist'])[['name', 'continent','latitude_deg', 'longitude_deg', 'local_code','iata_code','dist']])
-
- 
-    #airports['dist'] = math.sqrt( ((airports['longitude_deg'] - ax)**2) + (airports['latitude_deg'] - ay)**2 )
-
-    # print(math.sqrt(((listing_lon - ax)**2)+((listing_lat-ay)**2)))
+def generate_flight_dataframe(departure_airport, arrival_airport, departure_date, return_date):
     
 
-    
-    # print(list(set(airports['iso_country'])))
-    # print(airports.head(20))
-
-
-
-def generate_flight_dataframe(start_date, end_date, departure_location):
-    
-
-    #result = scrape_data(__,__, str(start_date), str(end_date))
-    result = scrape_data('JFK', 'IST', '2023-05-20', '2023-06-10')
-    #print(result)
-    #print(pd.DataFrame.from_dict(result))
-
-    # Check type of columns in dataframe
-    print([(c, type(pd.DataFrame.from_dict(result)[c][0])) for c in pd.DataFrame.from_dict(result).columns])
-    res_df = pd.to_datetime(pd.DataFrame.from_dict(result))
+    result = scrape_data(departure_airport, arrival_airport, departure_date, return_date)
+    res_df = pd.DataFrame.from_dict(result)
 
     ## Cleaning dataframe columns
 
@@ -110,6 +88,8 @@ def generate_flight_dataframe(start_date, end_date, departure_location):
     res_df['Travel Time_min'] = res_df['Travel Time'].apply(lambda x: int(str(x).split('min')[0].split('hr')[1].strip()) if 'min' in str(x) else 0 )
     res_df['Travel Time Converted'] = res_df['Travel Time_hour_to_min'] + res_df['Travel Time_min']
     
+    #res_df.sort_values(by = [''])
+    print(res_df)
     return res_df
 
 
@@ -128,10 +108,7 @@ def generate_THS_dataframe():
             validListings.append(listing)
 
     print(len(validListings))
-
-    # print(tempList)
     print(len(tempList))
-    # tempList = list(set(tempList))
 
 
     ### Convert Json output to dataframe export ### 
@@ -188,8 +165,8 @@ def generate_THS_dataframe():
     res_df['End Date'] = pd.to_datetime(res_df['End Date'])
     res_df['Duration (Days)'] = res_df['End Date'] - res_df['Start Date']
     
-
-    print(res_df[['Listing Location 1a', 'Listing Location 1b', 'Listing Location 1c', 'Listing Location 1d']])
+    return res_df[['Start Date', 'End Date', 'Latitude', 'Longitude','Listing Location 1a', 'Listing Location 1b', 'Listing Location 1c', 'Listing Location 1d']]
+    #print(res_df[['Listing Location 1a', 'Listing Location 1b', 'Listing Location 1c', 'Listing Location 1d']])
 
 
 
@@ -232,19 +209,6 @@ def main():
     # print(next_page)
 
 
-def main2():
-    
-    # Generate listings for TS
-    ths_listings = generate_THS_dataframe()
-    continent = ths_listings['Listing Location 1d'][0]
-
-
-    # Find ton n nearest airports to TS listing location
-
-    top_n_nearest_airports(lat, lon, continent, 2)
-
-    # Feed these airports to generate_flight_dataframe() and generate list of flights
-
 
 
 
@@ -253,5 +217,33 @@ if __name__ == '__main__':
     # main()
     # test()
     #generate_THS_dataframe()
-    top_n_nearest_airports(38.922250, -77.254710, 'NA', 2)
+
+    # Generate listings for TS
+    ths_listings = generate_THS_dataframe()
+    ths_latitudes = ths_listings['Latitude'][0]
+    ths_longitudes = ths_listings['Longitude'][0]
+    ths_continent = ths_listings['Listing Location 1d'][0]
+    print('continent from TS:', ths_continent)
+
+    print('#### THS LISTINGS ####')
+    print(ths_listings)
+
+
+    # Find ton n nearest airports to TS listing location
+    airports_returned = top_n_nearest_airports(ths_latitudes, ths_longitudes, ths_continent, 2)
+    airport_codes = list(set(list(airports_returned['local_code'] + airports_returned['iata_code'])))
+    airport_names = list(set(list(airports_returned['name'])))
+
+    # Feed these airports to generate_flight_dataframe() and generate list of flights
+    #top_n_nearest_airports(38.922250, -77.254710, 'NA', 2)
+
+    print(airport_codes, airport_names)
+    
+    cheapest_flights_df = pd.DataFrame()
+
+    for airport in airport_codes:
+
+        THS_arrival_airport = airport
+
+        = generate_flight_dataframe('IAD', THS_arrival_airport, '2023-05-05', '2023-05-15')
     #main2()

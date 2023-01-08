@@ -154,7 +154,7 @@ def check_cached(origin : str, dest : str, date_leave, date_return):
         Checking by filename
     '''
     file_name = make_filename(origin = origin, dest = dest)
-    if file_name not in os.listdir('../flight_analysis_app/cached/'):
+    if file_name not in os.listdir('cached/'):
         return False
 
     df = load_cached(origin = origin, dest = dest, return_df = True)
